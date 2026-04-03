@@ -46,6 +46,22 @@ def estimate_half_marathon_time(pace_5k, age, gender): # pace_5k - tempo na 5 km
     # dystansu (np. z 5 km na 10 km), czas nie wydłuża się dwukrotnie, lecz o ok. 6% więcej 
     # niż wynikałoby to z prostej proporcji 
     half_marathon_sec = pace_sec * 21.097 * 1.06
+    # Half Marathon Sec: Total finish time in seconds.
+    # Pace Sec: Average time per kilometer (in seconds) you plan to run.
+    # 21.097: The standardized half marathon distance in kilometers (often rounded from 
+    # 21.0975).
+    # 1.06: A correction factor (approximately 6%) often used in predictions (derived from 
+    # the Riegel formula) to account for fatigue and the likelihood that a runner will cover 
+    # more than the exact distance
+
+    # Example Calculation
+    # If you want to run at a pace of 5:00 minutes/km (300 seconds per km):
+    # Pace Sec: 300
+    # Formula: 300*21.097*1.06
+    # Result: 6,708.846 seconds
+    # Conversion: 6,708.846 / 60 = 111.81 minutes (1 hour, 51 minutes, 49 seconds)
+    # Note: Without the 1.06 factor, the result would be 1 hour 45 minutes, meaning the 
+    # factor added ~7 minutes for a more realistic goal.
 
     # korekty
     if age and age > 40:
