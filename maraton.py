@@ -2,7 +2,7 @@ import json
 import streamlit as st
 from langfuse import Langfuse
 from openai import OpenAI
-#import pandas as pd
+#import pandas as pd 
 
 #df = pd.read_csv('halfmarathon_wroclaw_2023__final.csv', sep=';')
 
