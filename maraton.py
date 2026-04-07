@@ -1,7 +1,9 @@
+import os
 import json
 import streamlit as st
 from langfuse import Langfuse
 from openai import OpenAI
+from dotenv import load_dotenv
 #import pandas as pd 
 
 #df = pd.read_csv('halfmarathon_wroclaw_2023__final.csv', sep=';')
@@ -11,12 +13,14 @@ from openai import OpenAI
 # ======================
 st.set_page_config(page_title="Półmaraton – estymacja czasu")
 
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+load_dotenv()
+
+client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
 langfuse = Langfuse(
-    public_key=st.secrets["LANGFUSE_PUBLIC_KEY"],
-    secret_key=st.secrets["LANGFUSE_SECRET_KEY"],
-    host=st.secrets["LANGFUSE_HOST"],
+    public_key=os.environ["LANGFUSE_PUBLIC_KEY"],
+    secret_key=os.environ["LANGFUSE_SECRET_KEY"],
+    host=os.environ["LANGFUSE_HOST"],
 )
 
 # ======================
